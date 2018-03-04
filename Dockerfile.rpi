@@ -9,7 +9,7 @@ git clone --depth=1 https://github.com/darkwebdev/home-api && \
 cd home-api && \
 npm i
 
-RUN chown app:users /app/dashboard
+RUN chown app:users /app/home-api
 
 RUN [ "cross-build-end" ]
 
