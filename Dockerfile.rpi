@@ -1,0 +1,22 @@
+FROM tibalt/alpine-node:rpi
+
+RUN [ "cross-build-start" ]
+
+WORKDIR /app
+
+RUN \
+git clone --depth=1 https://github.com/darkwebdev/home-api && \
+cd home-api && \
+npm i
+
+RUN chown app:users /app/dashboard
+
+RUN [ "cross-build-end" ]
+
+COPY ./app /app
+
+EXPOSE 8080
+
+USER app
+
+ENTRYPOINT ["/app/entry.sh"]
