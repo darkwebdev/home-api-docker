@@ -13,4 +13,4 @@ COPY app /app
 
 EXPOSE 8080
 
-ENTRYPOINT ["/app/entry.sh"]
+ENTRYPOINT ["sh", "/app/entry.sh"]

@@ -19,4 +19,4 @@ EXPOSE 8080
 
 USER app
 
-ENTRYPOINT ["/app/entry.sh"]
+ENTRYPOINT ["sh", "/app/entry.sh"]
