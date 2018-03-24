@@ -4,8 +4,10 @@ WORKDIR /app
 
 USER app
 
+ADD https://api.github.com/repos/darkwebdev/mozaik-dashboard/git/refs/heads/master version.json
+
 RUN \
-git clone --depth=1 https://github.com/darkwebdev/home-api && \
+git clone --depth=1 -b master https://github.com/darkwebdev/home-api.git && \
 cd home-api && \
 npm i
 
